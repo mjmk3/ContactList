@@ -4,6 +4,8 @@ import app.contact.contacts.Model.Contact;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 /**
  * @author MJ Makki
  * @version 1.0
@@ -13,5 +15,6 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface ContactRepo extends JpaRepository<Contact, Long> {
+public interface ContactRepo extends JpaRepository<Contact, String> {
+    Optional<Contact> findById(String id);
 }

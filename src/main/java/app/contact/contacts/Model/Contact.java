@@ -1,9 +1,13 @@
 package app.contact.contacts.Model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.io.Serializable;
+
+import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_DEFAULT;
 
 /**
  * @author MJ Makki
@@ -20,8 +24,18 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Getter
 @Setter
+@JsonInclude(NON_DEFAULT)
 public class Contact implements Serializable {
 
     @Id
-    private Long id;
+    @UuidGenerator
+    @Column(unique = true, updatable = false)
+    private String id;
+    private String name;
+    private String title;
+    private String phone;
+    private String email;
+    private String address;
+    private String status;
+    private String photoUrl;
 }

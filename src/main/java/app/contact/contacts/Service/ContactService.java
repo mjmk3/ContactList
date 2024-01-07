@@ -1,6 +1,9 @@
 package app.contact.contacts.Service;
 
+import app.contact.contacts.Model.Contact;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * @author MJ Makki
@@ -12,4 +15,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface ContactService {
+    Contact createContact(Contact contact);
+
+    Page<Contact> getAllContacts(int page, int size);
+
+    Contact getContact(String id);
+
+    String uploadPhoto(String id, MultipartFile file);
 }
