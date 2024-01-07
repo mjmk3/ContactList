@@ -1,2 +1,36 @@
-{
-    }
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/iqp
+    username: root
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: ture
+    database-platform: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+
+  session:
+    jdbc:
+      initialize-schema: always
+
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 100GB
+      max-request-size: 107GB
+
+  mvc:
+    async:
+      request-timeout: 3600000
+
+server:
+  port: 8099
+  error:
+    path: /contact/error
+    whitelabel:
+      enabled: false
