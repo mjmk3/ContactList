@@ -12,7 +12,6 @@ import org.springframework.stereotype.Repository;
  * @since long time ago
  */
 
-
 @Repository
 public interface ContactRepo extends JpaRepository<Contact, Long> {
 }
