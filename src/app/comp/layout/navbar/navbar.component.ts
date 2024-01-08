@@ -22,7 +22,7 @@ import {Router} from "@angular/router";
 export class NavbarComponent  implements OnInit {
   items: MenuItem[] | undefined;
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit() {
     this.items = [
