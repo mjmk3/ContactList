@@ -6,19 +6,23 @@ import {HomeComponent} from "../home/home.component";
 import {ContactMainComponent} from "../../contact/contact-main/contact-main.component";
 import {UserMainComponent} from "../../user/user-main/user-main.component";
 import {TaskMainComponent} from "../../task/task-main/task-main.component";
+import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [
     MenubarModule,
-    ChipsModule
+    ChipsModule,
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent  implements OnInit {
   items: MenuItem[] | undefined;
+
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.items = [
